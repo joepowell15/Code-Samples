@@ -28,33 +28,31 @@ namespace tEditor
 
         private void createBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            //file path concatenation with user input
             string filePath = fileTb.Text;
             filePath += "\\";
             filePath += slnName.Text;
             filePath += "\\";
             System.IO.Directory.CreateDirectory(filePath);
-            MessageBox.Show(filePath);
             filePath += appName.Text;
             filePath += ".c++";
-            MessageBox.Show(filePath);
             System.IO.File.Create(filePath);
         }
-
+        //if other radio button is checked the program fills in to the path of the app exe
         private void otherRb_Checked(object sender, RoutedEventArgs e)
         {
             //sets folder of the app location to the textbox othertb
             string test = System.Environment.CurrentDirectory;
             fileTb.Text = test;
         }
-
+        //if desktop button is checked it fills, the program fills into the path to the desktop
         private void dtopRb_Checked(object sender, RoutedEventArgs e)
         {
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
 
         }
-
+        //this function disables and enables the create button 
         private void slnName_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(slnName.Text))
@@ -65,7 +63,7 @@ namespace tEditor
                     createBtn.IsEnabled = true;
             }
         }
-
+        //this function disables and enables the create button 
         private void appName_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(appName.Text))

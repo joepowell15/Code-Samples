@@ -7,33 +7,48 @@
         mc:Ignorable="d"
         Title="pCreate" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\background.jpg" Opacity="0.1"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="250"/>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119.667,45,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Solution Name" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119.667,81,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Application Name" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119.667,116,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Language Choice" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="239.667,47,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="239.667,80,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Canvas Grid.Column="1" Grid.Row="1">
-            <RadioButton Content="C++" Grid.Column="1" HorizontalAlignment="Left" Margin="239.667,120,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton Content="Java" Grid.Column="1" HorizontalAlignment="Left" Margin="287.667,120,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton Content="Python" Grid.Column="1" HorizontalAlignment="Left" Margin="333.667,120,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0.667,111.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Solution Name" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0.667,147.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Application Name" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0.667,211.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Language Choice" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <TextBox x:Name="slnName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="153.667,113.667,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="slnName_TextChanged"/>
+        <TextBox x:Name="appName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="153.667,146.667,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="appName_TextChanged"/>
+        <Canvas  Grid.Column="1" Grid.Row="1">
+            <RadioButton Content="C++" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="154" Canvas.Top="218" FontSize="16" IsChecked="True"/>
+            <RadioButton Content="Java" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="209" Canvas.Top="218" FontSize="16" IsEnabled="False"/>
+            <RadioButton Content="Python" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="263" Canvas.Top="218" FontSize="16" IsEnabled="False"/>
+            <TextBox x:Name="fileTb" Height="23" Canvas.Left="10" TextWrapping="Wrap"  Canvas.Top="281" Width="auto"/>
+
+        </Canvas >
+        <Canvas Grid.Column="1" Grid.Row="1" Margin="153.333,174,0.333,105" Width="auto" Height="auto">
+            <RadioButton x:Name="emptyRb" Content="Empty" FontSize="16" Canvas.Left="3" Canvas.Top="5"/>
+            <RadioButton x:Name="hwRb" Content="Hello World" Canvas.Left="70" Canvas.Top="5" FontSize="16" IsChecked="True"/>
+            <RadioButton x:Name="eclassRb" Content="Empty Class" Canvas.Left="182" Canvas.Top="5" FontSize="16" />
+
 
         </Canvas>
-        
-       
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119.667,155,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Save Location" VerticalAlignment="Top"/>
-        <RadioButton Content="Desktop" Grid.Column="1" HorizontalAlignment="Left" Margin="240.667,158,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="other" Content="Other" Grid.Column="1" HorizontalAlignment="Left" Margin="327.667,158,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-        <TextBox x:Name="otherTb" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="119.667,219,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="auto"/>
-        <Button Content="Create" Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,222,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0.667,245.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Save Location" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <RadioButton x:Name="dtopRb" Content="Desktop" Grid.Column="1" HorizontalAlignment="Left" Margin="154.667,248.667,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Height="auto" Width="auto" FontSize="16" Checked="dtopRb_Checked"/>
+        <RadioButton x:Name="otherRb" Content="Other" Grid.Column="1" HorizontalAlignment="Left" Margin="241.667,248.667,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="otherRb_Checked" Height="auto" Width="auto" FontSize="16"/>
+        <Button x:Name="createBtn" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="329.667,286.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="17" Click="createBtn_Click" IsEnabled="False"/>
+        <Image Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="100" Margin="154.667,8.667,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\butler_icon_color.png"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="50.667,34.667,0,0" TextWrapping="Wrap" Text="Butler" VerticalAlignment="Top" FontSize="36" Grid.Row="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0.667,180.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Template Style" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="227.333,236,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="283.333,236,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1"/>
     </Grid>
 </Window>

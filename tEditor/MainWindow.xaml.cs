@@ -27,7 +27,7 @@ namespace tEditor
             InitializeComponent();
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
-            int x;
+            
 
 
         }

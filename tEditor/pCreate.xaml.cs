@@ -24,8 +24,7 @@ namespace tEditor
             InitializeComponent();
         }
 
-
-
+      
         private void createBtn_Click(object sender, RoutedEventArgs e)
         {
             //file path concatenation with user input
@@ -36,8 +35,27 @@ namespace tEditor
             System.IO.Directory.CreateDirectory(filePath);
             filePath += appName.Text;
             filePath += ".c++";
-            System.IO.File.Create(filePath);
+            //System.IO.File.Create(filePath);
+            //if hello world radio button is checked when create button is pushed add in hello world text template
+            if (hwRb.IsChecked == true)
+                addHw();
+            //close this window and show the main window with updates.
+            this.Close();
+            App.Current.MainWindow.Visibility = Visibility.Visible;
+            
+            
+
         }
+       //call a function from the main class to add text to the mainTb
+        private void addHw()
+        {
+           
+            MainWindow.mainWindow.SetTb();
+             
+
+        }
+       
+       
         //if other radio button is checked the program fills in to the path of the app exe
         private void otherRb_Checked(object sender, RoutedEventArgs e)
         {
@@ -73,6 +91,11 @@ namespace tEditor
                 if(emptyRb.IsChecked==true || hwRb.IsChecked==true || eclassRb.IsChecked==true)
                 createBtn.IsEnabled = true;
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            App.Current.MainWindow.Visibility = Visibility.Visible;
         }
     }
 }

@@ -113,9 +113,9 @@ namespace tEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_new10_216291 {
+        internal static System.Drawing.Bitmap open {
             get {
-                object obj = ResourceManager.GetObject("if_new10_216291", resourceCulture);
+                object obj = ResourceManager.GetObject("open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

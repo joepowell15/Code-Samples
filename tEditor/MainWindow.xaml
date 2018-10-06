@@ -6,72 +6,90 @@
         xmlns:local="clr-namespace:tEditor"
         mc:Ignorable="d"
         Title="Butler" Height="745.333333333334" Width="800">
-        <!--main grid definitons to keep content centered-->
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="55"/>
-                <RowDefinition Height="55"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition  Width="141*"/>
-                <ColumnDefinition Width="38*"/>
-            </Grid.ColumnDefinitions>
+    <!--main grid definitons to keep content centered-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition  Width="141*"/>
+            <ColumnDefinition Width="38*"/>
+        </Grid.ColumnDefinitions>
 
-          <!--visible borders to section off items-->
-            <Border Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="1" />
-            <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" >
-                    <!--menu at top of page creation-->
-            <Menu x:Name="menu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="-0.333,-0.333,-0.333,35">
-                <MenuItem>
-                    <MenuItem.Header>
-                        <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\file_button_big.png" />
-                        
-                    </MenuItem.Header>
-                    <MenuItem Header="New" Command="New">
-                        <MenuItem.Icon>
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\new.png"/>
-                        </MenuItem.Icon>
+        <!--visible borders to section off items-->
+        <Border Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="1" />
+
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" >
+            <!--menu at top of page creation-->
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <Menu x:Name="menu">
+
+                    <MenuItem Header="File" >
+
+                        <MenuItem Header="New" Command="New">
+                            <MenuItem.Icon>
+                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\new.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Save" Command="Save">
+                            <MenuItem.Icon>
+                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Save" Command="Save">
-                        <MenuItem.Icon>
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
-                        </MenuItem.Icon>
+                    <MenuItem Header="Edit">
+                        <MenuItem Header="Cut" Command="Cut">
+                            <MenuItem.Icon>
+                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\cut.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Copy" Command="Copy">
+                            <MenuItem.Icon>
+                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Edit">
-                    <MenuItem Header="Cut" Command="Cut">
-                        <MenuItem.Icon>
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\cut.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Copy" Command="Copy">
-                        <MenuItem.Icon>
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                
-                <MenuItem Header="View" />
-                <MenuItem Header="Window" />
-                <MenuItem Header="Help" />
-            </Menu>
+
+                    <MenuItem Header="View" />
+                    <MenuItem Header="Window" />
+                    <MenuItem Header="Help" />
+                </Menu>
+                <ToolBarTray Height="34" Margin="0,0,0.333,0">
+                    <ToolBar>
+                        <Button x:Name="OpenFunc" ToolTip="Open new File" >
+                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\open.png" Height="21" Width="22"/>
+                        </Button>
+                        <Button x:Name="NewFile" ToolTip="Create new File">
+                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\new.png" Height="21" Width="22"/>
+                        </Button>
+                        <Button x:Name="NewFunc" ToolTip="Open new Function Menu" >
+                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\function.png" Height="21" Width="22"/>
+                        </Button>
+                        <Button x:Name="SaveFile" ToolTip="Save File" >
+                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png" Height="21" Width="22"/>
+                        </Button>
+
+                    </ToolBar>
+                </ToolBarTray>
+            </StackPanel>
         </Border>
-            <!--border are surronding to section off parts-->
+        <!--border are surronding to section off parts-->
         <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" BorderThickness="1" />
-            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" />
-            <TextBlock Name="lineC" Grid.Row="2" Grid.Column="0"/>
+        <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" />
+        <TextBlock Name="lineC" Grid.Row="2" Grid.Column="0"/>
 
 
-            <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="status bar" FontSize="24" />
-            <TextBlock Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="side panels" FontSize="24"/>
-            <TextBox Name="mainTb" Grid.Column="1" Grid.Row="2" Text="Main code area" TextWrapping="Wrap"/>
-            <TextBlock Grid.Column="1" Grid.Row="0" Text=" "/>
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="tab area"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="status bar" FontSize="24" />
+        <TextBlock Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="side panels" FontSize="24"/>
+        <TextBox Name="mainTb" Grid.Column="1" Grid.Row="2" Text="Main code area" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="tab area"/>
     </Grid>
-        
+
 
 
 </Window>

@@ -28,14 +28,15 @@ namespace tEditor
         {
             //immediately hides the main window and only shows the creation screen
             InitializeComponent();
-            lNumb();
+            LNumb();
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
+            
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
         //this function add in hello world c++ code
-        private void lNumb()
+        private void LNumb()
         {
             int x = 1;
             while (x < 101)

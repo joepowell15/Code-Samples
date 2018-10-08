@@ -33,7 +33,7 @@ namespace tEditor
             filePath += "\\";
             filePath += slnName.Text;
             filePath += "\\";
-            System.IO.Directory.CreateDirectory(filePath);
+            //System.IO.Directory.CreateDirectory(filePath);
             filePath += appName.Text;
             filePath += ".c++";
             //System.IO.File.Create(filePath);

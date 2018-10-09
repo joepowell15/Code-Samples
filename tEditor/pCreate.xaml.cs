@@ -22,7 +22,9 @@ namespace tEditor
         public pCreate()
         {
             InitializeComponent();
-          
+            string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            fileTb.Text = test;
+
         }
 
       
@@ -67,13 +69,7 @@ namespace tEditor
              SaveFileDialog1.ShowDialog();*/
             //sets folder of the app location to the textbox othertb
         }
-        //if desktop button is checked it fills, the program fills into the path to the desktop
-        private void dtopRb_Checked(object sender, RoutedEventArgs e)
-        {
-            string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            fileTb.Text = test;
-
-        }
+      
         //this function disables and enables the create button 
         private void slnName_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -102,7 +98,7 @@ namespace tEditor
             App.Current.MainWindow.Visibility = Visibility.Visible;
         }
         //opens a directory browser every time other is clicked 
-        private void otherRb_Click(object sender, RoutedEventArgs e)
+        private void Browsebtn_Click(object sender, RoutedEventArgs e)
         {
             var folderBrowser = new System.Windows.Forms.FolderBrowserDialog
             {
@@ -116,6 +112,12 @@ namespace tEditor
             fileTb.CaretIndex = fileTb.GetLineLength(0);
             //simulates the user clicking the textbox
             fileTb.Focus();
+        }
+
+        private void Dtopbtn_Click(object sender, RoutedEventArgs e)
+        {
+            string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            fileTb.Text = test;
         }
     }
 }

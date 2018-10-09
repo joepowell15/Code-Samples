@@ -12,48 +12,49 @@
             <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.1"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="auto" MinHeight="324"/>
-            <RowDefinition Height="32.667"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" MinHeight="363.333"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="154*"/>
-            <ColumnDefinition Width="41*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="194*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" MinWidth="448.667"/>
+
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <!--text box creation-->
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,112,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Solution Name" VerticalAlignment="Top" Height="21" Width="105" FontSize="16"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,148,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Application Name" VerticalAlignment="Top" Height="21" Width="127" FontSize="16"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,212,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Language Choice" VerticalAlignment="Top" Height="21" Width="122" FontSize="16"/>
-        <TextBox x:Name="slnName" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="153.333,114,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="slnName_TextChanged"/>
-        <TextBox x:Name="appName" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="153.333,147,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="appName_TextChanged"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="12,161.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Solution Name" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="12,124.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Application Name" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="12,221.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Language Choice" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
+        <TextBox x:Name="slnName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="166.667,161.667,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="slnName_TextChanged"/>
+        <TextBox x:Name="appName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="166.667,124.667,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="appName_TextChanged"/>
         <!--this canvas is needed to group the radio buttons. without it you can only select one per the whole page-->
-        <Canvas  Grid.Column="2" Grid.Row="1" Margin="0.333,0,0,28">
+        <Canvas  Grid.Column="1" Grid.Row="1" Margin="12,1.333,41.333,10.667" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <RadioButton Content="C++" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="154" Canvas.Top="218" FontSize="16" IsChecked="True"/>
             <RadioButton Content="Java" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="209" Canvas.Top="218" FontSize="16" IsEnabled="False"/>
-            <RadioButton Content="Python" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="263" Canvas.Top="218" FontSize="16" IsEnabled="False"/>
-            <TextBox x:Name="fileTb" Height="23" Canvas.Left="3" TextWrapping="NoWrap"  Canvas.Top="270" Width="300"/>
+            <RadioButton Content="Python" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="273" Canvas.Top="218" FontSize="16" IsEnabled="False"/>
+            <TextBox x:Name="fileTb" Height="25" Canvas.Left="8" TextWrapping="NoWrap"  Canvas.Top="279" Width="300"/>
+            <Label Content=".c++" Canvas.Left="273" Canvas.Top="124"/>
 
         </Canvas >
         <!--this canvas is needed to group the radio buttons. without it you can only select one per the whole page-->
-        <Canvas Grid.Column="2" Grid.Row="1" Margin="153.333,174,0,133" Width="auto" Height="auto">
-            <RadioButton x:Name="emptyRb" Content="Empty" FontSize="16" Canvas.Left="3" Canvas.Top="5"/>
-            <RadioButton x:Name="hwRb" Content="Hello World" Canvas.Left="70" Canvas.Top="5" FontSize="16" IsChecked="True"/>
-            <RadioButton x:Name="eclassRb" Content="Empty Class" Canvas.Left="182" Canvas.Top="5" FontSize="16" />
+        <Canvas Grid.Column="1" Grid.Row="1" Margin="166.667,189.667,80,95.667" Width="auto" Height="auto">
+            <RadioButton x:Name="emptyRb" Content="Empty" FontSize="16" Canvas.Top="1"/>
+            <RadioButton x:Name="hwRb" Content="Hello World" Canvas.Left="74" FontSize="16" IsChecked="True" Canvas.Top="1"/>
+            <RadioButton x:Name="eclassRb" Content="Empty Class" Canvas.Left="177" FontSize="16" Canvas.Top="1" />
 
 
         </Canvas>
 
         <!--more textblock and radio button creation-->
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,246,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Save Location" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
-        <RadioButton x:Name="dtopRb" Content="Desktop" Grid.Column="2" HorizontalAlignment="Left" Margin="154.333,249,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Height="20" Width="77" FontSize="16" Checked="dtopRb_Checked"/>
-        <Button x:Name="otherRb" Content="Other" Grid.Column="2" HorizontalAlignment="Left" Margin="241.2,245.4,0,0" Grid.Row="1" VerticalAlignment="Top"  Height="auto" Width="59" FontSize="16" Click="otherRb_Click"/>
-        <Button x:Name="CreateBtn" Content="Create" Grid.Column="2" HorizontalAlignment="Left" Margin="190.333,296,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="25" Click="CreateBtn_Click" IsEnabled="False"/>
-        <Image Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="100" Margin="173.333,9,0,0" VerticalAlignment="Top" Width="100" Source="/Resources/butler_icon_color.png"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="50.333,35,0,0" TextWrapping="Wrap" Text="Butler" VerticalAlignment="Top" FontSize="36" Grid.Row="1" Height="48" Width="Auto"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0.333,181,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Template Style" VerticalAlignment="Top" Height="21" Width="105" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="227.333,236,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="2" Height="8" Width="38"/>
-        <TextBlock HorizontalAlignment="Left" Margin="283.333,236,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="2" Height="8" Width="38"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="12,254.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Save Location:" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
+        <Button x:Name="Dtopbtn" Content="Desktop" Grid.Column="1" HorizontalAlignment="Left" Margin="385.667,279.667,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="63" FontSize="16" Click="Dtopbtn_Click"/>
+        <Button x:Name="Browsebtn" Content="Browse" Grid.Column="1" HorizontalAlignment="Left" Margin="321.667,279.667,0,0" Grid.Row="1" VerticalAlignment="Top"  Height="26" Width="55" FontSize="16" Click="Browsebtn_Click"/>
+        <Button x:Name="CreateBtn" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="263.667,323.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="40" Click="CreateBtn_Click" IsEnabled="False" Grid.RowSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="107" Margin="167,6.333,0,0" VerticalAlignment="Top" Width="107" Source="/Resources/butler_icon_color.png" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="70,46.333,0,0" TextWrapping="Wrap" Text="Butler" VerticalAlignment="Top" FontSize="36" Grid.Row="1" Height="48" Width="auto" Grid.Column="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,191.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Template Style" VerticalAlignment="Top" Height="21" Width="auto" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="301,239.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="8" Width="38"/>
+        <TextBlock HorizontalAlignment="Left" Margin="238,238.333,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="8" Width="38"/>
     </Grid>
 </Window>

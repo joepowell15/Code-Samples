@@ -32,24 +32,24 @@
 
                         <MenuItem Header="New" Command="New">
                             <MenuItem.Icon>
-                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\new.png"/>
+                                <Image Source="/Resources/new.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Save" Command="Save">
                             <MenuItem.Icon>
-                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
+                                <Image Source="/Resources/save.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Edit">
                         <MenuItem Header="Cut" Command="Cut">
                             <MenuItem.Icon>
-                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\cut.png"/>
+                                <Image Source="/Resources/cut.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Copy" Command="Copy">
                             <MenuItem.Icon>
-                                <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png"/>
+                                <Image Source="/Resources/save.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
@@ -58,19 +58,19 @@
                     <MenuItem Header="Window" />
                     <MenuItem Header="Help" />
                 </Menu>
-                <ToolBarTray Height="34" Margin="0,0,0.333,0">
+                <ToolBarTray Height="34" Margin="0,0,0.333,0" IsLocked="False">
                     <ToolBar>
                         <Button x:Name="OpenFunc" ToolTip="Open new File" >
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\open.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/open.png" Height="21" Width="22"/>
                         </Button>
                         <Button x:Name="NewFile" ToolTip="Create new File">
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\new.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/new.png" Height="21" Width="22"/>
                         </Button>
                         <Button x:Name="NewFunc" ToolTip="Open new Function Menu" >
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\function.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/function.png" Height="21" Width="22"/>
                         </Button>
                         <Button x:Name="SaveFile" ToolTip="Save File" >
-                            <Image Source="C:\Users\Joe\source\repos\tEditor\tEditor\Resources\save.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/save.png" Height="21" Width="22"/>
                         </Button>
 
                     </ToolBar>

@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -24,8 +25,10 @@ namespace tEditor
             InitializeComponent();
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
+            
 
         }
+
 
       
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
@@ -35,10 +38,10 @@ namespace tEditor
             filePath += "\\";
             filePath += slnName.Text;
             filePath += "\\";
-            //System.IO.Directory.CreateDirectory(filePath);
+            System.IO.Directory.CreateDirectory(filePath);
             filePath += appName.Text;
             filePath += ".c++";
-            //System.IO.File.Create(filePath);
+            System.IO.File.Create(filePath);
             //if hello world radio button is checked when create button is pushed add in hello world text template
             if (hwRb.IsChecked == true)
                 AddHw();
@@ -116,8 +119,55 @@ namespace tEditor
 
         private void Dtopbtn_Click(object sender, RoutedEventArgs e)
         {
+            //sets the file location back to desktop if the user changes it
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
+        }
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
+
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
+        }
+
+        private void Light_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Themes/Metro/Metro.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+            Uri uri2 = new Uri("Themes/Metro/Metro.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+
+            ThemeDictionary.MergedDictionaries.Clear();
+            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
+
+            Grid.Background = Brushes.White;
+
+
+
+        }
+
+        private void Dark_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+            Uri uri2 = new Uri("Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+            var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+            ThemeDictionary.MergedDictionaries.Clear();
+            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
+
+            Grid.Background = brush;
         }
     }
 }

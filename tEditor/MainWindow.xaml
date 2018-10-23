@@ -29,7 +29,7 @@
                 <Menu x:Name="menu">
 
                     <MenuItem Header="File" >
-
+                                
                         <MenuItem Header="New" Command="New">
                             <MenuItem.Icon>
                                 <Image Source="/Resources/new.png"/>
@@ -60,17 +60,17 @@
                 </Menu>
                 <ToolBarTray Height="34" Margin="0,0,0.333,0" IsLocked="False">
                     <ToolBar>
-                        <Button x:Name="OpenFunc" ToolTip="Open new File" >
-                            <Image Source="/Resources/open.png" Height="21" Width="22"/>
-                        </Button>
-                        <Button x:Name="NewFile" ToolTip="Create new File">
+                        <Button x:Name="NewFunc" ToolTip="Open new File" >
                             <Image Source="/Resources/new.png" Height="21" Width="22"/>
                         </Button>
-                        <Button x:Name="NewFunc" ToolTip="Open new Function Menu" >
-                            <Image Source="/Resources/function.png" Height="21" Width="22"/>
+                        <Button x:Name="NewFile" ToolTip="Create new File">
+                            <Image Source="/Resources/open.png" Height="21" Width="22"/>
                         </Button>
-                        <Button x:Name="SaveFile" ToolTip="Save File" >
+                        <Button x:Name="SaveFunc" ToolTip="Open new Function Menu" >
                             <Image Source="/Resources/save.png" Height="21" Width="22"/>
+                        </Button>
+                        <Button x:Name="NFuncFile" ToolTip="New Function File" >
+                            <Image Source="/Resources/function.png" Height="21" Width="22"/>
                         </Button>
 
                     </ToolBar>

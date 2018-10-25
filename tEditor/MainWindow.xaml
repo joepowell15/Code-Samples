@@ -6,8 +6,19 @@
         xmlns:local="clr-namespace:tEditor"
         mc:Ignorable="d"
         Title="Butler" Height="745.333333333334" Width="800">
+    <Window.Resources>
+        <ResourceDictionary x:Name="ThemeDictionary">
+            <ResourceDictionary.MergedDictionaries >
+
+
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
     <!--main grid definitons to keep content centered-->
-    <Grid>
+    <Grid x:Name="Grid" Background="#FF2D2D30">
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
@@ -26,40 +37,26 @@
         <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" >
             <!--menu at top of page creation-->
             <StackPanel Grid.Column="1" Grid.Row="0">
-                <Menu x:Name="menu">
+                <Menu x:Name="menu" Background="#FF2D2D30" Foreground="White">
 
-                    <MenuItem Header="File" >
-                                
-                        <MenuItem Header="New" Command="New">
+                    <MenuItem Header="File" Background="#FF2D2D30" Foreground="White" Focusable="False" >
+                      
+                        <MenuItem x:Name="newMI" Header="New" Background="#FF2D2D30" Foreground="White">
                             <MenuItem.Icon>
+
                                 <Image Source="/Resources/new.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Save" Command="Save">
-                            <MenuItem.Icon>
-                                <Image Source="/Resources/save.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                    </MenuItem>
-                    <MenuItem Header="Edit">
-                        <MenuItem Header="Cut" Command="Cut">
-                            <MenuItem.Icon>
-                                <Image Source="/Resources/cut.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Copy" Command="Copy">
-                            <MenuItem.Icon>
-                                <Image Source="/Resources/save.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                    </MenuItem>
 
-                    <MenuItem Header="View" />
-                    <MenuItem Header="Window" />
-                    <MenuItem Header="Help" />
+                            </MenuItem.Icon>
+                            <MenuItem x:Name="newFile" Header="File" Click="newFile_Click"/>
+
+
+
+
+                        </MenuItem>
+                    </MenuItem>
                 </Menu>
-                <ToolBarTray Height="34" Margin="0,0,0.333,0" IsLocked="False">
-                    <ToolBar>
+                <ToolBarTray x:Name="Tray" Height="34" Margin="0,0,0.333,0" IsLocked="True" Background="#FF2D2D30">
+                    <ToolBar x:Name="Tlbar" Background="#FF686877">
                         <Button x:Name="NewFunc" ToolTip="Open new File" >
                             <Image Source="/Resources/new.png" Height="21" Width="22"/>
                         </Button>
@@ -72,6 +69,9 @@
                         <Button x:Name="NFuncFile" ToolTip="New Function File" >
                             <Image Source="/Resources/function.png" Height="21" Width="22"/>
                         </Button>
+                        <Button x:Name="ThemeChng" ToolTip="Change Theme" Click="ThemeChng_Click"  >
+                            <Image Source="/Resources/theme.png" Height="21" Width="22"/>
+                        </Button>
 
                     </ToolBar>
                 </ToolBarTray>
@@ -80,12 +80,12 @@
         <!--border are surronding to section off parts-->
         <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" BorderThickness="1" />
         <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" />
-        <TextBlock Name="lineC" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Name="lineC" Grid.Row="2" Grid.Column="0" IsEnabled="False" Height="auto" Width="auto"/>
 
 
         <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="status bar" FontSize="24" />
         <TextBlock Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="side panels" FontSize="24"/>
-        <TextBox Name="mainTb" Grid.Column="1" Grid.Row="2" Text="Main code area" TextWrapping="Wrap"/>
+        <TextBox Name="mainTb" Grid.Column="1" Grid.Row="2" Text="Main code area" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" TextChanged="mainTb_TextChanged"/>
 
         <TextBlock Grid.Column="1" Grid.Row="1" Text="tab area"/>
     </Grid>

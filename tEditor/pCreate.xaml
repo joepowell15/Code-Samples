@@ -47,8 +47,8 @@
             <RadioButton Content="Python" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Canvas.Left="273" Canvas.Top="124" FontSize="16" IsEnabled="False"/>
             <TextBox x:Name="fileTb" Height="25" Canvas.Left="8" TextWrapping="NoWrap"  Canvas.Top="279" Width="300"/>
             <Label Content=".c++" Canvas.Left="273" Canvas.Top="159"/>
-            <Button Content="Light Mode" Canvas.Left="115" Canvas.Top="331" Width="auto" Click="Light_Click"/>
-            <Button Content="Dark Mode" Canvas.Top="331" Width="auto" Click="Dark_Click"/>
+            <Button Content="Light Mode" Canvas.Left="115" Canvas.Top="331" Width="auto" Click="Light_Click" FontSize="12"/>
+            <Button Content="Dark Mode" Canvas.Top="331" Width="auto" Click="Dark_Click" FontSize="12"/>
 
         </Canvas >
         <!--this canvas is needed to group the radio buttons. without it you can only select one per the whole page-->
@@ -64,11 +64,11 @@
         <Label Grid.Column="1" HorizontalAlignment="Left" Margin="12,254.333,0,0" Grid.Row="1" Content="Save Location:" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
         <Button x:Name="Dtopbtn" Content="Desktop" Grid.Column="1" HorizontalAlignment="Left" Margin="403.2,279.2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="auto" FontSize="16" Click="Dtopbtn_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="Browsebtn" Content="Browse" Grid.Column="1" HorizontalAlignment="Left" Margin="321.667,279.667,0,0" Grid.Row="1" VerticalAlignment="Top"  Height="26" Width="auto" FontSize="16" Click="Browsebtn_Click"/>
-        <Button x:Name="CreateBtn" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="263.667,323.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="40" Click="CreateBtn_Click" IsEnabled="False" Grid.RowSpan="2"/>
+        <Button x:Name="CreateBtn" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="263.667,323.667,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Height="40" Click="CreateBtn_Click" IsEnabled="False" Grid.RowSpan="2" FontSize="20"/>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="107" Margin="167,6.333,0,0" VerticalAlignment="Top" Width="107" Source="/Resources/butler_icon_color.png" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="70,46.333,0,0" TextWrapping="Wrap" Text="Butler" VerticalAlignment="Top" FontSize="36" Grid.Row="1" Height="48" Width="auto" Grid.Column="1"/>
+        <Label HorizontalAlignment="Left" Margin="57.2,46.2,0,0"  Content="Butler" VerticalAlignment="Top" FontSize="36" Grid.Row="1" Height="48" Width="auto" Grid.Column="1"/>
         <Label Grid.Column="1" HorizontalAlignment="Left" Margin="10.2,219.2,0,0" Grid.Row="1" Content="Template Style" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="301.2,145.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="8" Width="38"/>
-        <TextBlock HorizontalAlignment="Left" Margin="238.2,147.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="8" Width="38"/>
+        <Label HorizontalAlignment="Left" Margin="302.2,141.2,0,0" Grid.Row="1" Content="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="auto" Width="auto"/>
+        <Label HorizontalAlignment="Left" Margin="238.2,141.2,0,0" Grid.Row="1" Content="Coming Soon!" VerticalAlignment="Top" FontSize="6" Grid.Column="1" Height="auto" Width="auto"/>
     </Grid>
 </Window>

@@ -28,7 +28,7 @@ namespace tEditor
         {
             //immediately hides the main window and only shows the creation screen
             InitializeComponent();
-            LNumb();
+            lineC.Text += "1" +"\n";
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
             
@@ -36,16 +36,7 @@ namespace tEditor
             mainWindow = this;
         }
         //this function add in hello world c++ code
-        private void LNumb()
-        {
-            int x = 1;
-            while (x < 101)
-            {
-                lineC.Text += x + "\n";
-                x++;
-            }
-
-        }
+        
         public int SetTb()
         {
             string hW = "#include <cstdio>nl" +
@@ -63,8 +54,69 @@ namespace tEditor
 
             return 0;
         }
-       
-       
+
+        private void ThemeChng_Click(object sender, RoutedEventArgs e)
+        {
+           
+            
+            //if light theme found set to dark
+            if (ThemeDictionary.MergedDictionaries[0].Source.ToString().Equals("Themes/Metro/Metro.MSControls.Core.Implicit.xaml"))
+            {
+
+
+                Uri uri3 = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri4 = new Uri("Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri3 });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri4 });
+                var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+                var brush2=new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
+                Grid.Background = brush;
+                menu.Foreground = Brushes.White;
+                Tlbar.Background = brush2;
+                menu.Background = brush;
+                Tray.Background = brush;
+
+            }
+            //else set to light theme
+            else
+            {
+                Uri uri = new Uri("Themes/Metro/Metro.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri2 = new Uri("Themes/Metro/Metro.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
+                var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+                Tray.Background = Brushes.White;
+                Grid.Background = brush;
+                Grid.Background = Brushes.White;
+                menu.Foreground = brush;
+                menu.Background = Brushes.White;
+                Tlbar.Background = Brushes.White;
+            }
+            
+        }
+
+        private void mainTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            if (lineC.LineCount != mainTb.LineCount)
+            {
+                while (lineC.LineCount < mainTb.LineCount)
+                {
+                    lineC.Text += lineC.LineCount + "\n";
+
+                }
+            }
+        }
+
+     
+
+
+        private void newFile_Click(object sender, RoutedEventArgs e)
+        {
+            new pCreate().Show();
+        }
     }
          
 }

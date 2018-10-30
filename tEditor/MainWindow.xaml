@@ -4,26 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tEditor"
+        xmlns:avalon="http://icsharpcode.net/sharpdevelop/avalonedit"
         mc:Ignorable="d"
         Title="Butler" Height="745.333333333334" Width="800">
+
     <Window.Resources>
         <ResourceDictionary x:Name="ThemeDictionary">
             <ResourceDictionary.MergedDictionaries >
-
-
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
         </ResourceDictionary>
     </Window.Resources>
+
     <!--main grid definitons to keep content centered-->
     <Grid x:Name="Grid" Background="#FF2D2D30">
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
@@ -40,7 +39,7 @@
                 <Menu x:Name="menu" Background="#FF2D2D30" Foreground="White">
 
                     <MenuItem Header="File" Background="#FF2D2D30" Foreground="White" Focusable="False" >
-                      
+
                         <MenuItem x:Name="newMI" Header="New" Background="#FF2D2D30" Foreground="White">
                             <MenuItem.Icon>
 
@@ -56,7 +55,7 @@
                     </MenuItem>
                 </Menu>
                 <ToolBarTray x:Name="Tray" Height="34" Margin="0,0,0.333,0" IsLocked="True" Background="#FF2D2D30">
-                    <ToolBar x:Name="Tlbar" Background="#FF686877">
+                    <ToolBar x:Name="Tlbar" Background="#FF686877" >
                         <Button x:Name="NewFunc" ToolTip="Open new File" >
                             <Image Source="/Resources/new.png" Height="21" Width="22"/>
                         </Button>
@@ -80,16 +79,17 @@
         <!--border are surronding to section off parts-->
         <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" BorderThickness="1" />
         <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" />
-        <TextBox Name="lineC" Grid.Row="2" Grid.Column="0" IsEnabled="False" Height="auto" Width="auto"/>
 
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="status bar" FontSize="24" />
+        <TabControl Name="tabControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <TabItem Header="FileName.cpp">
+                    <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++"/>
+            </TabItem>
+            <TabItem Header="OtherFile.cpp" />
+        </TabControl>
         <TextBlock Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="side panels" FontSize="24"/>
-        <TextBox Name="mainTb" Grid.Column="1" Grid.Row="2" Text="Main code area" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" TextChanged="mainTb_TextChanged"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="tab area"/>
+        <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock Name="sText" Text="Status Bar"/>
+        </StatusBar>
     </Grid>
-
-
-
 </Window>

@@ -25,11 +25,7 @@ namespace tEditor
             InitializeComponent();
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
-            
-
         }
-
-
       
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -48,16 +44,10 @@ namespace tEditor
             //close this window and show the main window with updates.
             this.Close();
             App.Current.MainWindow.Visibility = Visibility.Visible;
-            
-            
-
         }
        //call a function from the main class to add text to the mainTb
         private void AddHw()
         {
-           
-            MainWindow.mainWindow.SetTb();
-             
 
         }
        
@@ -153,9 +143,6 @@ namespace tEditor
             ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
 
             Grid.Background = Brushes.White;
-
-
-
         }
 
         private void Dark_Click(object sender, RoutedEventArgs e)

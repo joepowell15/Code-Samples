@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ICSharpCode.AvalonEdit;
 
 namespace tEditor
 {
@@ -28,42 +29,19 @@ namespace tEditor
         {
             //immediately hides the main window and only shows the creation screen
             InitializeComponent();
-            lineC.Text += "1" +"\n";
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
-            
+
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
         //this function add in hello world c++ code
         
-        public int SetTb()
-        {
-            string hW = "#include <cstdio>nl" +
-                       "#include <string>nl" +
-                       "#include <cstdlib>nl" +
-                       "#include <iostream>nl" +
-                       "int main(int argc, char *argv[])nl" +
-                       "{nl" +
-                       "tb std::cout<<\"Hello World\"<<std::endl;nl" +
-                       "nl nl tb return 0;nl" +
-                       "}nl";
-            string hWF = hW.Replace("nl","\n");
-            hWF = hWF.Replace("tb", "\t");
-            mainTb.Text = hWF;
-
-            return 0;
-        }
-
         private void ThemeChng_Click(object sender, RoutedEventArgs e)
         {
-           
-            
             //if light theme found set to dark
             if (ThemeDictionary.MergedDictionaries[0].Source.ToString().Equals("Themes/Metro/Metro.MSControls.Core.Implicit.xaml"))
             {
-
-
                 Uri uri3 = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
                 Uri uri4 = new Uri("Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
                 ThemeDictionary.MergedDictionaries.Clear();
@@ -76,8 +54,10 @@ namespace tEditor
                 Tlbar.Background = brush2;
                 menu.Background = brush;
                 Tray.Background = brush;
-
+                tabControl.Background = brush;
+                editor.Background = brush;
             }
+
             //else set to light theme
             else
             {
@@ -93,30 +73,14 @@ namespace tEditor
                 menu.Foreground = brush;
                 menu.Background = Brushes.White;
                 Tlbar.Background = Brushes.White;
-            }
-            
-        }
-
-        private void mainTb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-            if (lineC.LineCount != mainTb.LineCount)
-            {
-                while (lineC.LineCount < mainTb.LineCount)
-                {
-                    lineC.Text += lineC.LineCount + "\n";
-
-                }
+                tabControl.Background = brush;
+                editor.Background = Brushes.White;
             }
         }
-
-     
-
 
         private void newFile_Click(object sender, RoutedEventArgs e)
         {
             new pCreate().Show();
         }
     }
-         
 }

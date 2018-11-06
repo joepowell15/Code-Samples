@@ -36,19 +36,59 @@ namespace tEditor
             filePath += "\\";
             System.IO.Directory.CreateDirectory(filePath);
             filePath += appName.Text;
-            filePath += ".c++";
-            System.IO.File.Create(filePath);
+            filePath += ".cpp";
             //if hello world radio button is checked when create button is pushed add in hello world text template
             if (hwRb.IsChecked == true)
-                AddHw();
+                setAvaHw(filePath);
+            else if (eclassRb.IsChecked == true)
+                setAvaCl(filePath);
+            else if(emptyRb.IsChecked==true)
+                MainWindow.mainWindow.setAva(appName.Text+"cpp", "", filePath);
             //close this window and show the main window with updates.
             this.Close();
             App.Current.MainWindow.Visibility = Visibility.Visible;
         }
-       //call a function from the main class to add text to the mainTb
-        private void AddHw()
+        private void setAvaCl(string path)
         {
+            string hw = "#include <cstdio>nl" +
+                         "#include <string>nl" +
+                         "#include <cstdlib>nl" +
+                         "#include <iostream>nl" +
+                         "class enterClassName nl{"+
+                         "nl" +
+                         "tb std::string example; nl" +
+                         "tb int example2; nl" +
+                         "tb enterClassName *next; nl" +
+                         "};nl nl nl"+
+                         "int main(int argc, char *argv[])nl" +
+                         "{nl" +
+                         "tb std::cout<<\"Hello World\"<<std::endl;nl" +
+                         "nl nl tb return 0;nl" +
+                         "}nl";
+            string hWF = hw.Replace("nl", "\n");
+            hWF = hWF.Replace("tb", "\t");
 
+            MainWindow.mainWindow.setAva(appName.Text+".cpp", hWF, path);
+
+
+        }
+        //call a function from the main class to add text to the avalon tb
+        private void setAvaHw(string path)
+        { string hw= "#include <cstdio>nl" +
+                       "#include <string>nl" +
+                       "#include <cstdlib>nl" +
+                       "#include <iostream>nl" +
+                       "int main(int argc, char *argv[])nl" +
+                       "{nl" +
+                       "tb std::cout<<\"Hello World\"<<std::endl;nl" +
+                       "nl nl tb return 0;nl" +
+                       "}nl";
+            string hWF = hw.Replace("nl", "\n");
+            hWF = hWF.Replace("tb", "\t");
+            
+            MainWindow.mainWindow.setAva(appName.Text+".cpp",hWF,path);
+
+            
         }
        
        

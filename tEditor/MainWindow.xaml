@@ -46,7 +46,7 @@
                                 <Image Source="/Resources/new.png"/>
 
                             </MenuItem.Icon>
-                            <MenuItem x:Name="newFile" Header="File" Click="newFile_Click"/>
+                            <MenuItem x:Name="newFile" Header="File"/>
 
 
 
@@ -81,10 +81,12 @@
         <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" />
 
         <TabControl Name="tabControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <TabItem Header="FileName.cpp">
+            <TabItem x:Name="tab1">
                     <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++"/>
             </TabItem>
-            <TabItem Header="OtherFile.cpp" />
+            <TabItem Header="OtherFile.cpp" >
+                <avalon:TextEditor Name="editor2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++"/>
+            </TabItem>
         </TabControl>
         <TextBlock Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="side panels" FontSize="24"/>
 

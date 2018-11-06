@@ -31,12 +31,13 @@ namespace tEditor
             InitializeComponent();
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
-
+            var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+            editor.Background = brush;
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
         //this function add in hello world c++ code
-        
+
         private void ThemeChng_Click(object sender, RoutedEventArgs e)
         {
             //if light theme found set to dark
@@ -48,7 +49,7 @@ namespace tEditor
                 ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri3 });
                 ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri4 });
                 var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
-                var brush2=new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
+                var brush2 = new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
                 Grid.Background = brush;
                 menu.Foreground = Brushes.White;
                 Tlbar.Background = brush2;
@@ -77,10 +78,18 @@ namespace tEditor
                 editor.Background = Brushes.White;
             }
         }
-
-        private void newFile_Click(object sender, RoutedEventArgs e)
+        public void setAva(string name, string text, string path)
         {
-            new pCreate().Show();
+            tab1.Header = name;
+            editor.Text = text;
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(path, true))
+            {
+                file.WriteLine(editor.Text);
+            }
         }
     }
+
+    
+    
 }

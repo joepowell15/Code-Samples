@@ -45,6 +45,7 @@ namespace tEditor
             else if(emptyRb.IsChecked==true)
                 MainWindow.mainWindow.setAva(appName.Text+"cpp", "", filePath);
             //close this window and show the main window with updates.
+            MyStaticValues.myStaticFile = filePath;
             this.Close();
             App.Current.MainWindow.Visibility = Visibility.Visible;
         }

@@ -14,9 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ICSharpCode.AvalonEdit;
+using System.IO;
 
 namespace tEditor
 {
+    public static class MyStaticValues
+    {
+        public static string myStaticFile { get; set; }
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -88,8 +93,66 @@ namespace tEditor
                 file.WriteLine(editor.Text);
             }
         }
-    }
 
-    
-    
+        private void newFile_Click(object sender, RoutedEventArgs e)
+        {
+            new pCreate().Show();
+
+        }
+
+        private void openf()
+        {
+
+        var fileContent = string.Empty;
+        var filePath = string.Empty;
+        var openFileDialog1 = new OpenFileDialog();
+        openFileDialog1.Filter = "C++ Files|*.c*";
+            openFileDialog1.Title = "Select a C++ or Cpp File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //Get the path of specified file
+                filePath = openFileDialog1.FileName;
+                MyStaticValues.myStaticFile = filePath;
+                //Read the contents of the file into a stream
+                var fileStream = openFileDialog1.OpenFile();
+
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+                    fileContent = reader.ReadToEnd();
+                    editor.Text = fileContent;
+                }
+            }
+        }
+
+        private void openfile_Click(object sender, RoutedEventArgs e)
+        {
+            openf();
+           
+        }
+
+        private void NewFunc_Click(object sender, RoutedEventArgs e)
+        {
+            new pCreate().Show();
+        }
+
+        private void OpenFile_Click_1(object sender, RoutedEventArgs e)
+        {
+            openf();
+        }
+
+        private void SaveFunc_Click(object sender, RoutedEventArgs e)
+        {
+            string filename = MyStaticValues.myStaticFile;
+            System.IO.File.WriteAllText(filename, editor.Text);
+            
+        }
+
+        private void savefile_Click(object sender, RoutedEventArgs e)
+        {
+
+            string filename = MyStaticValues.myStaticFile;
+            System.IO.File.WriteAllText(filename, editor.Text);
+        }
+    }
 }

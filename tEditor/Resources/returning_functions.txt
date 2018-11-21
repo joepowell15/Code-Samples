@@ -1,0 +1,28 @@
+Declaration:
+
+[type] [function name]([parameters]){
+	[operations]
+}
+
+Example:
+
+int function(int a, int b){
+	int c = b + a;
+	return c;
+}
+
+Returning functions return a value of the same type.
+For example, int functions return int values.
+When calling the function, values are passed in as parameters.
+These parameters are treated like variables only within that specific execution of the function.
+Any variables declared inside the function only exist within that certain instance.
+
+Calling (example function above):
+
+d = function(5, 4);
+
+The variable 'd' now has a value of 9.
+
+Other types such as char and float can also be used.
+For more information on returning functions, visit
+http://www.cplusplus.com/doc/tutorial/functions/

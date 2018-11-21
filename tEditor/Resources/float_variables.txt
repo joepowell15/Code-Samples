@@ -1,0 +1,19 @@
+Declaration:
+
+float [variable name];
+
+A 'float' variable holds a decimal value.
+It allocates the necessary memory upon declaration.
+At the end of the program, the memory is freed automatically.
+The variable name can be used to represent the value stored in it.
+For example, take
+
+float f = 3.14;
+
+The value of 'f' is now 3.14.
+The value can be changed via the following syntax:
+
+[variable name] = [decimal value];
+
+For more information on float variables, visit
+http://www.cplusplus.com/doc/tutorial/variables/

@@ -1,0 +1,19 @@
+Declaration:
+
+double [variable name];
+
+A 'double' variable holds a decimal value with greater precision than a float.
+It allocates the necessary memory upon declaration.
+At the end of the program, the memory is freed automatically.
+The variable name can be used to represent the value stored in it.
+For example, take
+
+double d = 3.14;
+
+The value of 'd' is now 3.14.
+The value can be changed via the following syntax:
+
+[variable name] = [decimal value];
+
+For more information on double variables, visit
+http://www.cplusplus.com/doc/tutorial/variables/

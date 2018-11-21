@@ -1,0 +1,26 @@
+Recursive functions call themselves.
+
+For example:
+
+void annoying_song(){
+	printf("I know a song that you don't know and it goes like this:\n");
+	annoying_song();
+	return;
+}
+
+Output:
+
+I know a song that you don't know and it goes like this:
+I know a song that you don't know and it goes like this:
+I know a song that you don't know and it goes like this:
+I know a song that you don't know and it goes like this:
+I know a song that you don't know and it goes like this:
+I know a song that you don't know and it goes like this:
+...
+
+It repeats indefinitely.
+Remember to add something to stop a recursive function in order to not loop forever.
+An if statement to make the function return before it repeats would suffice.
+
+For more information on recursive functions, visit
+http://www.cplusplus.com/doc/tutorial/functions/

@@ -27,13 +27,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition  Width="141*"/>
-            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
-        <!--visible borders to section off items-->
-        <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Margin="623,0,0.333,0" />
-
-        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" Margin="0,0,0.333,1.333" >
+     
             <!--menu at top of page creation-->
             <StackPanel Grid.Column="1" Grid.Row="0">
                 <Menu x:Name="menu" Background="#FF2D2D30" Foreground="White" Height="23" Margin="0,0,0.333,0">
@@ -107,22 +104,70 @@
                     </ToolBar>
                 </ToolBarTray>
             </StackPanel>
-        </Border>
-        <!--border are surronding to section off parts-->
-        <Border Grid.Column="0" Grid.Row="2" BorderBrush="Black" BorderThickness="1" />
-        <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" Margin="0,0,0.333,0" />
+        
 
         <TabControl Name="tabControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,4.667,0.333,0">
             <TabItem x:Name="tab1">
-                <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++" FontSize="14pt" />
+                <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++" FontSize="14pt" Background="#FF2D2D30" TextChanged="editor_TextChanged" />
 
             </TabItem>
             
         </TabControl>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Text="side panels" FontSize="24" Grid.ColumnSpan="2" Margin="623,0,0.333,0"/>
+        
+
 
         <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0.333,0">
-            <TextBlock Name="sText" Text="Status Bar"/>
+            <TextBlock Name="sText" />
         </StatusBar>
+        <ScrollViewer Grid.Column="3" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+        <StackPanel Grid.Column="3" Grid.RowSpan="2" >
+
+            <Label Content="Help" HorizontalAlignment="Left" FontSize="36" FontWeight="Bold"/>
+            <Label Content="Variables"/>
+            <Expander Header="Integer" Name="exp1" Expanded="Expanded" Collapsed="Collapsed" >
+                    <TextBlock TextWrapping="Wrap" Name="inttxt"/>         
+
+            </Expander>
+            <Expander Header="Double" Name="exp2" Expanded="Expanded" Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="dbltxt"/>
+
+            </Expander>
+            <Expander Header="Float" Name="exp3" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="flttxt"/>
+
+            </Expander>
+            <Expander Header="Characters" Name="exp4" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="chrtxt"/>
+
+            </Expander>
+            <Expander Header="Boolean" Name="exp5" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="booltxt"/>
+
+            </Expander>
+            <Label Content="Functions"/>
+            <Expander Header="Recursive" Name="exp6" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="rectxt" />
+
+            </Expander>
+            <Expander Header="Return Values" Name="exp7" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="rettxt"/>
+
+            </Expander>
+            <Expander Header="Void Functions" Name="exp8" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="voitxt"/>
+
+            </Expander>
+            <Label Content="Dynamic Memory"/>
+            <Expander Header="Pointers" Name="exp9" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="poitxt"/>
+
+            </Expander>
+            <Expander Header="Memory Allocation" Name="exp10" Expanded="Expanded"  Collapsed="Collapsed">
+                <TextBlock TextWrapping="Wrap" Name="memtxt"/>
+
+            </Expander>
+
+        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

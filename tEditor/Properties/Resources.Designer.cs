@@ -61,12 +61,64 @@ namespace tEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///1-D
+        ///[type] [variable name][(size)];
+        ///
+        ///2-D
+        ///[type] [variable name][(size)][(size)];
+        ///
+        ///Example:
+        ///
+        ///int array[10][10];
+        ///
+        ///Arrays are made to store several values of a certain type together.
+        ///The example above is a 2-D array.
+        ///
+        ///It would looks something like this:
+        ///
+        ///   0 1 2 3 4 5 6 7 8 9
+        ///0  x x x x x x x x x x
+        ///1  x x x x x x x x x x
+        ///2  x x x x x x x x x x
+        ///3  x x x x x x x x x x
+        ///4  x x x x x x x x x x
+        ///5  x x x x x x x x x x
+        ///6  x x x x x x x x x x
+        ///7  x x x x x x x x x x
+        ///8  x x x x x  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static System.Drawing.Bitmap background {
+        public static string arrays {
             get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("arrays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///bool [variable name];
+        ///
+        ///A &apos;bool&apos; variable holds a true/false value.
+        ///It allocates the necessary memory upon declaration.
+        ///At the end of the program, the memory is freed automatically.
+        ///The variable name can be used to represent the value stored in it.
+        ///For example, take
+        ///
+        ///bool b = true;
+        ///
+        ///The name &apos;b&apos; can now be used in place of true.
+        ///The value can be changed via the following syntax:
+        ///
+        ///[variable name] = [true/false];
+        ///
+        ///For more information on boolean variables, visit
+        ///http://www.cplus [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string boolean_variables {
+            get {
+                return ResourceManager.GetString("boolean_variables", resourceCulture);
             }
         }
         
@@ -91,6 +143,34 @@ namespace tEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///char [variable name];
+        ///
+        ///A &apos;char&apos; variable holds a character value.
+        ///It allocates the necessary memory upon declaration.
+        ///At the end of the program, the memory is freed automatically.
+        ///The variable name can be used to represent the value stored in it.
+        ///For example, take
+        ///
+        ///char c = &apos;a&apos;;
+        ///
+        ///The value of &apos;c&apos; is now the letter &quot;a&quot;.
+        ///The value can be changed via the following syntax:
+        ///
+        ///[variable name] = [character value];
+        ///
+        ///All value assignments should be contained in single quotes (&apos; &apos;).
+        ///
+        ///F [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string character_variables {
+            get {
+                return ResourceManager.GetString("character_variables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap copy {
@@ -111,12 +191,107 @@ namespace tEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///double [variable name];
+        ///
+        ///A &apos;double&apos; variable holds a decimal value with greater precision than a float.
+        ///It allocates the necessary memory upon declaration.
+        ///At the end of the program, the memory is freed automatically.
+        ///The variable name can be used to represent the value stored in it.
+        ///For example, take
+        ///
+        ///double d = 3.14;
+        ///
+        ///The value of &apos;d&apos; is now 3.14.
+        ///The value can be changed via the following syntax:
+        ///
+        ///[variable name] = [decimal value];
+        ///
+        ///For more information on double variables, [rest of string was truncated]&quot;;.
         /// </summary>
-        public static System.Drawing.Bitmap file_button_big {
+        public static string double_variables {
             get {
-                object obj = ResourceManager.GetObject("file_button_big", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("double_variables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///float [variable name];
+        ///
+        ///A &apos;float&apos; variable holds a decimal value.
+        ///It allocates the necessary memory upon declaration.
+        ///At the end of the program, the memory is freed automatically.
+        ///The variable name can be used to represent the value stored in it.
+        ///For example, take
+        ///
+        ///float f = 3.14;
+        ///
+        ///The value of &apos;f&apos; is now 3.14.
+        ///The value can be changed via the following syntax:
+        ///
+        ///[variable name] = [decimal value];
+        ///
+        ///For more information on float variables, visit
+        ///http://www.cplusplus.com/doc/tut [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string float_variables {
+            get {
+                return ResourceManager.GetString("float_variables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///int [variable name];
+        ///
+        ///An &apos;int&apos; variable holds an integer value.
+        ///It allocates the necessary memory upon declaration.
+        ///At the end of the program, the memory is freed automatically.
+        ///The variable name can be used to represent the value stored in it.
+        ///For example, take
+        ///
+        ///int x = 5;
+        ///
+        ///int y = 4 + x;
+        ///
+        ///The variable &apos;y&apos; would be set equal to 9 on declaration.
+        ///The value can be changed via the following syntax:
+        ///
+        ///[variable name] = [integer value];
+        ///
+        ///If a decimal value is assigned to an integ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string integer_variables {
+            get {
+                return ResourceManager.GetString("integer_variables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When you declare a variable, it automatically reserves memory for the given type.
+        ///Using pointers, we can dynamically allocate memory.
+        ///This means memory can be reserved dependent on various factors.
+        ///Using dynamic memory allocation, memory can be managed more efficiently.
+        ///
+        ///Let&apos;s take a step back to pointers first:
+        ///
+        ///int * pointer;
+        ///pointer = new int;
+        ///
+        ///This allocates the space for a new integer element and assigns the pointer to it.
+        ///It can also be done as an array:
+        ///
+        ///pointer = new int[5];
+        ///
+        ///This all [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string memory_allocation {
+            get {
+                return ResourceManager.GetString("memory_allocation", resourceCulture);
             }
         }
         
@@ -141,12 +316,124 @@ namespace tEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pointers are different from variables.
+        ///Instead of representing a value, they represent the contents of a certain address.
+        ///
+        ///Example:
+        ///
+        ///int i;
+        ///int * pointer;
+        ///pointer = &amp;i;
+        ///*pointer = 10;
+        ///
+        ///The variable &apos;i&apos; now holds a value of 10.
+        ///But let&apos;s continue the example.
+        ///
+        ///int x;
+        ///pointer = &amp;x;
+        ///*pointer = 20;
+        ///
+        ///The variable &apos;x&apos; now holds a value of 20.
+        ///Notice how the same pointer could be used to change both variable values.
+        ///The &apos;&amp;&apos; stands for &quot;address of&quot;.
+        ///The &apos;*&apos; stands for &quot;value pointed to by&quot;.
+        ///Und [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string pointers {
+            get {
+                return ResourceManager.GetString("pointers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recursive functions call themselves.
+        ///
+        ///For example:
+        ///
+        ///void annoying_song(){
+        ///	printf(&quot;I know a song that you don&apos;t know and it goes like this:\n&quot;);
+        ///	annoying_song();
+        ///	return;
+        ///}
+        ///
+        ///Output:
+        ///
+        ///I know a song that you don&apos;t know and it goes like this:
+        ///I know a song that you don&apos;t know and it goes like this:
+        ///I know a song that you don&apos;t know and it goes like this:
+        ///I know a song that you don&apos;t know and it goes like this:
+        ///I know a song that you don&apos;t know and it goes like this:
+        ///I know a song that you don [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string recursive_functions {
+            get {
+                return ResourceManager.GetString("recursive_functions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///[type] [function name]([parameters]){
+        ///	[operations]
+        ///}
+        ///
+        ///Example:
+        ///
+        ///int function(int a, int b){
+        ///	int c = b + a;
+        ///	return c;
+        ///}
+        ///
+        ///Returning functions return a value of the same type.
+        ///For example, int functions return int values.
+        ///When calling the function, values are passed in as parameters.
+        ///These parameters are treated like variables only within that specific execution of the function.
+        ///Any variables declared inside the function only exist within that certain instance.
+        ///
+        ///Calling (exa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string returning_functions {
+            get {
+                return ResourceManager.GetString("returning_functions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaration:
+        ///
+        ///void [function name]([parameters]){
+        ///	[operations]
+        ///}
+        ///
+        ///Example:
+        ///
+        ///void function(int a, float b, char c){
+        ///	b = b + a;
+        ///	printf(&quot;%f\n&quot;, b);
+        ///	printf(&quot;%c\n&quot;, c);
+        ///	return;
+        ///}
+        ///
+        ///Void functions perform actions that don&apos;t require any return value.
+        ///They&apos;re used often for displaying information that doesn&apos;t need to be stored.
+        ///When calling the function, values are passed in as parameters.
+        ///These parameters are treated like variables only within that specific execution of the function.
+        ///Any var [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string void_functions {
+            get {
+                return ResourceManager.GetString("void_functions", resourceCulture);
             }
         }
     }

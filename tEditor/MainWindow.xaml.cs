@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ICSharpCode.AvalonEdit;
 using System.IO;
+using System.Reflection;
 
 namespace tEditor
 {
@@ -34,10 +35,12 @@ namespace tEditor
         {
             //immediately hides the main window and only shows the creation screen
             InitializeComponent();
+            init();
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
-            var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
-            editor.Background = brush;
+           
+            
+            
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
@@ -212,6 +215,68 @@ namespace tEditor
         {
 
 
+        }
+        private void init()
+        {
+            editor.Options.InheritWordWrapIndentation = true;
+            editor.Options.HighlightCurrentLine = true;
+            inttxt.Text=Properties.Resources.integer_variables;
+            dbltxt.Text = Properties.Resources.double_variables;
+            flttxt.Text = Properties.Resources.float_variables;
+            chrtxt.Text = Properties.Resources.character_variables;
+            booltxt.Text = Properties.Resources.boolean_variables;
+            rectxt.Text = Properties.Resources.recursive_functions;
+            rettxt.Text = Properties.Resources.returning_functions;
+            voitxt.Text = Properties.Resources.void_functions;
+            poitxt.Text = Properties.Resources.pointers;
+            memtxt.Text = Properties.Resources.memory_allocation;
+            int offset = editor.CaretOffset;
+            var line = editor.Document.GetLineByOffset(offset);
+
+            sText.Text = line.ToString();
+
+
+        }
+
+
+        public void Expanded(object sender, RoutedEventArgs e)
+        {
+            var exp = (Expander)sender;
+            exp1.Visibility = Visibility.Collapsed;
+            exp2.Visibility = Visibility.Collapsed;
+            exp3.Visibility = Visibility.Collapsed;
+            exp4.Visibility = Visibility.Collapsed;
+            exp5.Visibility = Visibility.Collapsed;
+            exp6.Visibility = Visibility.Collapsed;
+            exp7.Visibility = Visibility.Collapsed;
+            exp8.Visibility = Visibility.Collapsed;
+            exp9.Visibility = Visibility.Collapsed;
+            exp10.Visibility = Visibility.Collapsed;
+            exp.Visibility = Visibility.Visible;
+        }
+
+        private void Collapsed(object sender, RoutedEventArgs e)
+        {
+            exp1.Visibility = Visibility.Visible;
+            exp2.Visibility = Visibility.Visible;
+            exp3.Visibility = Visibility.Visible;
+            exp4.Visibility = Visibility.Visible;
+            exp5.Visibility = Visibility.Visible;
+            exp6.Visibility = Visibility.Visible;
+            exp7.Visibility = Visibility.Visible;
+            exp8.Visibility = Visibility.Visible;
+            exp9.Visibility = Visibility.Visible;
+            exp10.Visibility = Visibility.Visible;
+        }
+
+        private void editor_TextChanged(object sender, EventArgs e)
+        {
+            int offset = editor.CaretOffset;
+            var line = editor.Document.GetLineByOffset(offset);
+
+            sText.Text =line.ToString();
+           
+            
         }
     }
 }

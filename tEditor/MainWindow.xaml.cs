@@ -42,7 +42,43 @@ namespace tEditor
             mainWindow = this;
         }
         //this function add in hello world c++ code
-
+        public void setTheme(string theme)
+        {
+            if (theme == "dark")
+            {
+                Uri uri3 = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri4 = new Uri("Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri3 });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri4 });
+                var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+                var brush2 = new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
+                Grid.Background = brush;
+                menu.Foreground = Brushes.White;
+                Tlbar.Background = brush2;
+                menu.Background = brush;
+                Tray.Background = brush;
+                tabControl.Background = brush;
+                editor.Background = brush;
+            }
+            else if(theme=="light")
+            {
+                Uri uri = new Uri("Themes/Metro/Metro.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri2 = new Uri("Themes/Metro/Metro.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
+                var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+                Tray.Background = Brushes.White;
+                Grid.Background = brush;
+                Grid.Background = Brushes.White;
+                menu.Foreground = brush;
+                menu.Background = Brushes.White;
+                Tlbar.Background = Brushes.White;
+                tabControl.Background = brush;
+                editor.Background = Brushes.White;
+            }
+        }
         private void ThemeChng_Click(object sender, RoutedEventArgs e)
         {
             //if light theme found set to dark

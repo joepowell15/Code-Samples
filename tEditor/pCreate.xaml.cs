@@ -126,6 +126,7 @@ namespace tEditor
                 CreateBtn.IsEnabled = true;
             }
         }
+        
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -154,25 +155,6 @@ namespace tEditor
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
         }
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
-        {
-            if (depObj != null)
-            {
-                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
-                {
-                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
-                    if (child != null && child is T)
-                    {
-                        yield return (T)child;
-                    }
-
-                    foreach (T childOfChild in FindVisualChildren<T>(child))
-                    {
-                        yield return childOfChild;
-                    }
-                }
-            }
-        }
 
         private void Light_Click(object sender, RoutedEventArgs e)
         {
@@ -184,6 +166,7 @@ namespace tEditor
             ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
 
             Grid.Background = Brushes.White;
+            MainWindow.mainWindow.setTheme("light");
         }
 
         private void Dark_Click(object sender, RoutedEventArgs e)
@@ -196,6 +179,7 @@ namespace tEditor
             ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
 
             Grid.Background = brush;
+            MainWindow.mainWindow.setTheme("dark");
         }
     }
 }

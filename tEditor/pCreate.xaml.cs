@@ -125,6 +125,7 @@ namespace tEditor
                 if(emptyRb.IsChecked==true || hwRb.IsChecked==true || eclassRb.IsChecked==true)
                 CreateBtn.IsEnabled = true;
             }
+            slnName.Text = appName.Text;
         }
         
 

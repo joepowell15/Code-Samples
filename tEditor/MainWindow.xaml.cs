@@ -55,11 +55,15 @@ namespace tEditor
                 var brush2 = new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
                 Grid.Background = brush;
                 menu.Foreground = Brushes.White;
-                Tlbar.Background = brush2;
+                Tlbar.Background = brush;
                 menu.Background = brush;
                 Tray.Background = brush;
                 tabControl.Background = brush;
                 editor.Background = brush;
+                file.Foreground = Brushes.White;
+                edit.Foreground = Brushes.White;
+                NFuncFile.Foreground = Brushes.White;
+                tbtnimg.Source = new BitmapImage(new Uri("/Resources/invtheme.png", UriKind.RelativeOrAbsolute));
             }
             else if(theme=="light")
             {
@@ -77,11 +81,15 @@ namespace tEditor
                 Tlbar.Background = Brushes.White;
                 tabControl.Background = brush;
                 editor.Background = Brushes.White;
+                file.Foreground = Brushes.Black;
+                edit.Foreground = Brushes.Black;
+                NFuncFile.Foreground = Brushes.Black;
+                tbtnimg.Source = new BitmapImage(new Uri("/Resources/theme.png", UriKind.RelativeOrAbsolute));
             }
         }
         private void ThemeChng_Click(object sender, RoutedEventArgs e)
         {
-            //if light theme found set to dark
+            //if light theme found, set to dark
             if (ThemeDictionary.MergedDictionaries[0].Source.ToString().Equals("Themes/Metro/Metro.MSControls.Core.Implicit.xaml"))
             {
                 Uri uri3 = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
@@ -93,11 +101,15 @@ namespace tEditor
                 var brush2 = new SolidColorBrush(Color.FromArgb(255, (byte)104, (byte)104, (byte)119));
                 Grid.Background = brush;
                 menu.Foreground = Brushes.White;
-                Tlbar.Background = brush2;
+                Tlbar.Background = brush;
                 menu.Background = brush;
                 Tray.Background = brush;
                 tabControl.Background = brush;
                 editor.Background = brush;
+                file.Foreground = Brushes.White;
+                edit.Foreground = Brushes.White;
+                NFuncFile.Foreground = Brushes.White;
+                tbtnimg.Source= new BitmapImage(new Uri("/Resources/invtheme.png", UriKind.RelativeOrAbsolute));
             }
 
             //else set to light theme
@@ -117,6 +129,10 @@ namespace tEditor
                 Tlbar.Background = Brushes.White;
                 tabControl.Background = brush;
                 editor.Background = Brushes.White;
+                file.Foreground = Brushes.Black;
+                edit.Foreground = Brushes.Black;
+                NFuncFile.Foreground = Brushes.Black;
+                tbtnimg.Source = new BitmapImage(new Uri("/Resources/theme.png", UriKind.RelativeOrAbsolute));
             }
         }
         public void setAva(string name, string text, string path)
@@ -130,11 +146,7 @@ namespace tEditor
             }
         }
 
-        private void newFile_Click(object sender, RoutedEventArgs e)
-        {
-            new pCreate().Show();
-
-        }
+      
 
         private void openf()
         {
@@ -189,6 +201,17 @@ namespace tEditor
 
             string filename = MyStaticValues.myStaticFile;
             System.IO.File.WriteAllText(filename, editor.Text);
+        }
+
+        private void newProj_Click(object sender, RoutedEventArgs e)
+        {
+            new pCreate().Show();
+        }
+
+        private void newFile_Click(object sender, RoutedEventArgs e)
+        {
+
+
         }
     }
 }

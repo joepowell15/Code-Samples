@@ -226,5 +226,13 @@
   <ItemGroup>
     <Resource Include="Resources\theme.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NewBig.png" />
+    <Resource Include="Resources\OpenBig.png" />
+    <Resource Include="Resources\SaveBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\invtheme.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

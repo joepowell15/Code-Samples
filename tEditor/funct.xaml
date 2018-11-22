@@ -1,0 +1,60 @@
+﻿<Window x:Class="tEditor.funct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tEditor"
+        mc:Ignorable="d"
+        Title="New Function Creator" Height="321" Width="577.8">
+
+    <Window.Resources>
+        <ResourceDictionary x:Name="ThemeDictionary">
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Return Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104,38,0,0"/>
+        <ComboBox x:Name="rt" HorizontalAlignment="Left" Margin="209,36,0,0" VerticalAlignment="Top" Width="83" SelectedIndex="0" Height="24" FontSize="10" DropDownClosed="DropDownClosed">
+            <ComboBoxItem Content="Void" FontSize="10"/>
+            <ComboBoxItem Content="Int" FontSize="10"/>
+            <ComboBoxItem Content="Double" FontSize="10"/>
+            <ComboBoxItem Content="Float" FontSize="10"/>
+            <ComboBoxItem Content="Bool" FontSize="10"/>
+            <ComboBoxItem Content="Std::String" FontSize="10"/>
+            <ComboBoxItem Content="Std::Vector" FontSize="10"/>
+        </ComboBox>
+        <Label Content="Function Name" HorizontalAlignment="Left" Margin="104,73,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="fn" HorizontalAlignment="Left" Height="23" Margin="209,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  LostFocus="TextBox_LostFocus" Text="funct1" TextChanged="textbChanged"/>
+        <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="334,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="auto" Width="auto" Foreground="Red"/>
+        <Label Content="Parameters" HorizontalAlignment="Left" Margin="109,117,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="pt1" HorizontalAlignment="Left" Margin="209,142,0,0" VerticalAlignment="Top" Width="91" SelectedIndex="0" Height="20" FontSize="10" DropDownClosed="DropDownClosed">
+
+            <ComboBoxItem Content="Int" FontSize="10"/>
+            <ComboBoxItem Content="Double" FontSize="10"/>
+            <ComboBoxItem Content="Float" FontSize="10"/>
+            <ComboBoxItem Content="Bool" FontSize="10"/>
+            <ComboBoxItem Content="Std::String" FontSize="10"/>
+            <ComboBoxItem Content="Std::Vector" FontSize="10"/>
+        </ComboBox>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="209,114,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="pn1" HorizontalAlignment="Left" Height="23" Margin="305,142,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="int1" TextChanged="textbChanged" />
+        <Label Content="Name" HorizontalAlignment="Left" Margin="305,114,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="pt2" HorizontalAlignment="Left" Margin="209,177,0,0" VerticalAlignment="Top" Width="91" SelectedIndex="4" Height="20" FontSize="10" DropDownClosed="DropDownClosed">
+
+            <ComboBoxItem Content="Int" FontSize="10"/>
+            <ComboBoxItem Content="Double" FontSize="10"/>
+            <ComboBoxItem Content="Float" FontSize="10"/>
+            <ComboBoxItem Content="Bool" FontSize="10"/>
+            <ComboBoxItem Content="Std::String" FontSize="10"/>
+            <ComboBoxItem Content="Std::Vector" FontSize="10"/>
+        </ComboBox>
+        <TextBox x:Name="pn2" HorizontalAlignment="Left" Height="23" Margin="305,178,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="string1" TextChanged="textbChanged" />
+        <TextBox x:Name="func" HorizontalAlignment="Left" Height="23" Margin="25,252,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="400"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="462,251,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Function" HorizontalAlignment="Left" Margin="25,224,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

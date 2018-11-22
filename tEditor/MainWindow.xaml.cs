@@ -278,5 +278,10 @@ namespace tEditor
            
             
         }
+
+        private void NFuncFile_Click(object sender, RoutedEventArgs e)
+        {
+            new funct().Show();
+        }
     }
 }

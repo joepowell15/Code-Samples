@@ -19,6 +19,10 @@ using System.Reflection;
 
 namespace tEditor
 {
+    public static class Theme
+    {
+        public static string curTheme { get; set; }
+    }
     public static class MyStaticValues
     {
         public static string myStaticFile { get; set; }
@@ -38,13 +42,13 @@ namespace tEditor
             init();
             this.Visibility = Visibility.Hidden;
             new pCreate().Show();
-           
+            Theme.curTheme = "dark";
             
             
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
-        //this function add in hello world c++ code
+   
         public void setTheme(string theme)
         {
             if (theme == "dark")
@@ -67,6 +71,7 @@ namespace tEditor
                 edit.Foreground = Brushes.White;
                 NFuncFile.Foreground = Brushes.White;
                 tbtnimg.Source = new BitmapImage(new Uri("/Resources/invtheme.png", UriKind.RelativeOrAbsolute));
+                Theme.curTheme = "dark";
             }
             else if(theme=="light")
             {
@@ -88,6 +93,8 @@ namespace tEditor
                 edit.Foreground = Brushes.Black;
                 NFuncFile.Foreground = Brushes.Black;
                 tbtnimg.Source = new BitmapImage(new Uri("/Resources/theme.png", UriKind.RelativeOrAbsolute));
+                Theme.curTheme = "light";
+
             }
         }
         private void ThemeChng_Click(object sender, RoutedEventArgs e)
@@ -113,6 +120,9 @@ namespace tEditor
                 edit.Foreground = Brushes.White;
                 NFuncFile.Foreground = Brushes.White;
                 tbtnimg.Source= new BitmapImage(new Uri("/Resources/invtheme.png", UriKind.RelativeOrAbsolute));
+                pCreate.pcreate.set("dark");
+                
+                Theme.curTheme = "dark";
             }
 
             //else set to light theme
@@ -136,6 +146,9 @@ namespace tEditor
                 edit.Foreground = Brushes.Black;
                 NFuncFile.Foreground = Brushes.Black;
                 tbtnimg.Source = new BitmapImage(new Uri("/Resources/theme.png", UriKind.RelativeOrAbsolute));
+                pCreate.pcreate.set("light");
+               
+                Theme.curTheme = "light";
             }
         }
         public void setAva(string name, string text, string path)
@@ -184,7 +197,14 @@ namespace tEditor
 
         private void NewFunc_Click(object sender, RoutedEventArgs e)
         {
-            new pCreate().Show();
+
+
+            var newWin = new pCreate();
+            newWin.ShowDialog();
+
+            newWin.set(Theme.curTheme);
+
+
         }
 
         private void OpenFile_Click_1(object sender, RoutedEventArgs e)
@@ -208,7 +228,10 @@ namespace tEditor
 
         private void newProj_Click(object sender, RoutedEventArgs e)
         {
-            new pCreate().Show();
+            var newWin = new pCreate();
+            newWin.ShowDialog();
+            
+            newWin.set(Theme.curTheme);
         }
 
         private void newFile_Click(object sender, RoutedEventArgs e)
@@ -281,7 +304,12 @@ namespace tEditor
 
         private void NFuncFile_Click(object sender, RoutedEventArgs e)
         {
-            new funct().Show();
+            var newWin = new funct();
+
+           
+            newWin.ShowDialog();
+
+            newWin.setTheme(Theme.curTheme);
         }
     }
 }

@@ -20,11 +20,14 @@ namespace tEditor
     /// </summary>
     public partial class pCreate : Window
     {
+        public static pCreate pcreate;
+
         public pCreate()
         {
             InitializeComponent();
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
+            pcreate = this;
         }
       
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
@@ -156,7 +159,32 @@ namespace tEditor
             string test = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             fileTb.Text = test;
         }
+        public void set(string theme)
+        {
+            if (theme=="dark")
+            {
+                Uri uri = new Uri("Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri2 = new Uri("Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                var brush = new SolidColorBrush(Color.FromArgb(255, (byte)45, (byte)45, (byte)48));
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
 
+                Grid.Background = brush;
+            }
+            else
+            {
+                Uri uri = new Uri("Themes/Metro/Metro.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
+                Uri uri2 = new Uri("Themes/Metro/Metro.MSControls.Toolkit.Implicit.xaml", UriKind.RelativeOrAbsolute);
+
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri2 });
+
+                Grid.Background = Brushes.White;
+            }
+
+        }
         private void Light_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("Themes/Metro/Metro.MSControls.Core.Implicit.xaml", UriKind.RelativeOrAbsolute);
@@ -168,6 +196,7 @@ namespace tEditor
 
             Grid.Background = Brushes.White;
             MainWindow.mainWindow.setTheme("light");
+          
         }
 
         private void Dark_Click(object sender, RoutedEventArgs e)
@@ -181,6 +210,7 @@ namespace tEditor
 
             Grid.Background = brush;
             MainWindow.mainWindow.setTheme("dark");
+          
         }
     }
 }

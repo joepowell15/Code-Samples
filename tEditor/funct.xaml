@@ -15,7 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="Grid" Background="#FF1E1E1E">
         <Label Content="Return Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104,38,0,0"/>
         <ComboBox x:Name="rt" HorizontalAlignment="Left" Margin="209,36,0,0" VerticalAlignment="Top" Width="83" SelectedIndex="0" Height="24" FontSize="10" DropDownClosed="DropDownClosed">
             <ComboBoxItem Content="Void" FontSize="10"/>
@@ -27,7 +27,7 @@
             <ComboBoxItem Content="Std::Vector" FontSize="10"/>
         </ComboBox>
         <Label Content="Function Name" HorizontalAlignment="Left" Margin="104,73,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="fn" HorizontalAlignment="Left" Height="23" Margin="209,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  LostFocus="TextBox_LostFocus" Text="funct1" TextChanged="textbChanged"/>
+        <TextBox x:Name="fn" HorizontalAlignment="Left" Height="23" Margin="209,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  LostFocus="LstFocus" Text="funct1" TextChanged="textbChanged"/>
         <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="334,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="auto" Width="auto" Foreground="Red"/>
         <Label Content="Parameters" HorizontalAlignment="Left" Margin="109,117,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="pt1" HorizontalAlignment="Left" Margin="209,142,0,0" VerticalAlignment="Top" Width="91" SelectedIndex="0" Height="20" FontSize="10" DropDownClosed="DropDownClosed">
@@ -40,7 +40,7 @@
             <ComboBoxItem Content="Std::Vector" FontSize="10"/>
         </ComboBox>
         <Label Content="Type" HorizontalAlignment="Left" Margin="209,114,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pn1" HorizontalAlignment="Left" Height="23" Margin="305,142,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="int1" TextChanged="textbChanged" />
+        <TextBox x:Name="pn1" HorizontalAlignment="Left" Height="23" Margin="305,142,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="int1" TextChanged="textbChanged" LostFocus="LstFocus" />
         <Label Content="Name" HorizontalAlignment="Left" Margin="305,114,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="pt2" HorizontalAlignment="Left" Margin="209,177,0,0" VerticalAlignment="Top" Width="91" SelectedIndex="4" Height="20" FontSize="10" DropDownClosed="DropDownClosed">
 
@@ -51,10 +51,12 @@
             <ComboBoxItem Content="Std::String" FontSize="10"/>
             <ComboBoxItem Content="Std::Vector" FontSize="10"/>
         </ComboBox>
-        <TextBox x:Name="pn2" HorizontalAlignment="Left" Height="23" Margin="305,178,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="string1" TextChanged="textbChanged" />
+        <TextBox x:Name="pn2" HorizontalAlignment="Left" Height="23" Margin="305,178,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="string1" TextChanged="textbChanged" LostFocus="LstFocus" />
         <TextBox x:Name="func" HorizontalAlignment="Left" Height="23" Margin="25,252,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="400"/>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="462,251,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="create" Content="Create" HorizontalAlignment="Left" Margin="462,251,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Function" HorizontalAlignment="Left" Margin="25,224,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="error2" HorizontalAlignment="Left" Margin="430,154,0,0"  VerticalAlignment="Top" Foreground="Red" FontSize="10"/>
+        <TextBlock x:Name="error3" HorizontalAlignment="Left" Margin="430,191,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="10"/>
 
     </Grid>
 </Window>

@@ -48,7 +48,7 @@ namespace tEditor
             //this is needed so we can access the main window and its functions from other classes
             mainWindow = this;
         }
-   
+        //set called from splash screen
         public void setTheme(string theme)
         {
             if (theme == "dark")
@@ -151,6 +151,7 @@ namespace tEditor
                 Theme.curTheme = "light";
             }
         }
+        //sets main textbox elements and saves text to file from splash menu
         public void setAva(string name, string text, string path)
         {
             tab1.Header = name;
@@ -163,7 +164,7 @@ namespace tEditor
         }
 
       
-
+        //opens file and writes it contents to the screen
         private void openf()
         {
 
@@ -188,13 +189,13 @@ namespace tEditor
                 }
             }
         }
-
+        //allows user to open a c++ file
         private void openfile_Click(object sender, RoutedEventArgs e)
         {
             openf();
            
         }
-
+        //opens new project menu and set its theme to the mainwindow theme
         private void NewFunc_Click(object sender, RoutedEventArgs e)
         {
 
@@ -206,26 +207,26 @@ namespace tEditor
 
 
         }
-
+        //allows user to open a c++ file
         private void OpenFile_Click_1(object sender, RoutedEventArgs e)
         {
             openf();
         }
-
+        //saves files to the global current filename
         private void SaveFunc_Click(object sender, RoutedEventArgs e)
         {
             string filename = MyStaticValues.myStaticFile;
             System.IO.File.WriteAllText(filename, editor.Text);
             
         }
-
+        //saves files to the global current filename
         private void savefile_Click(object sender, RoutedEventArgs e)
         {
 
             string filename = MyStaticValues.myStaticFile;
             System.IO.File.WriteAllText(filename, editor.Text);
         }
-
+        //opens new project menu and set its theme to the mainwindow theme
         private void newProj_Click(object sender, RoutedEventArgs e)
         {
             var newWin = new pCreate();
@@ -233,12 +234,13 @@ namespace tEditor
             
             newWin.set(Theme.curTheme);
         }
-
+        //lets user make new file only instead of whole new project
         private void newFile_Click(object sender, RoutedEventArgs e)
         {
 
 
         }
+        //Initializes main textbox and the help text on sidebar
         private void init()
         {
             editor.Options.InheritWordWrapIndentation = true;
@@ -261,9 +263,10 @@ namespace tEditor
 
         }
 
-
+        //expands one expander and higes all of the rest so it fits correctly
         public void Expanded(object sender, RoutedEventArgs e)
         {
+            //casts the sender object to the right type to access its member functions
             var exp = (Expander)sender;
             exp1.Visibility = Visibility.Collapsed;
             exp2.Visibility = Visibility.Collapsed;
@@ -277,7 +280,7 @@ namespace tEditor
             exp10.Visibility = Visibility.Collapsed;
             exp.Visibility = Visibility.Visible;
         }
-
+        //unhides all expanders when any expander is collapsed
         private void Collapsed(object sender, RoutedEventArgs e)
         {
             exp1.Visibility = Visibility.Visible;
@@ -291,7 +294,7 @@ namespace tEditor
             exp9.Visibility = Visibility.Visible;
             exp10.Visibility = Visibility.Visible;
         }
-
+        //changes status bar when main text box is changed
         private void editor_TextChanged(object sender, EventArgs e)
         {
             int offset = editor.CaretOffset;
@@ -301,7 +304,7 @@ namespace tEditor
            
             
         }
-
+        //shows new function template when on button click
         private void NFuncFile_Click(object sender, RoutedEventArgs e)
         {
             var newWin = new funct();

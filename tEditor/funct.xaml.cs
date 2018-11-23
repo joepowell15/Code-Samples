@@ -22,7 +22,7 @@ namespace tEditor
         public static funct functWin;
         public funct()
         {
-            
+
             InitializeComponent();
             set();
             functWin = this;
@@ -30,27 +30,27 @@ namespace tEditor
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-          
+
         }
-        
+
 
         private void set()
         {
             string set = rt.Text.ToLower();
-                if(!(String.IsNullOrEmpty(fn.Text)))
-                {
-                set += " " + fn.Text + " (";                    
-                 
-                }
+            if (!(String.IsNullOrEmpty(fn.Text)))
+            {
+                set += " " + fn.Text + " (";
 
-            set+=pt1.Text.ToLower()+ " ";
-            set += pn1.Text+ ", " + pt2.Text.ToLower()+" "+pn2.Text+")";
+            }
+
+            set += pt1.Text.ToLower() + " ";
+            set += pn1.Text + ", " + pt2.Text.ToLower() + " " + pn2.Text + ")";
             func.Text = set;
         }
 
 
-     
 
+        //resets full function field on change
         private void textbChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -60,7 +60,7 @@ namespace tEditor
             else
                 set();
         }
-
+        //resets full function field on change
         private void DropDownClosed(object sender, EventArgs e)
         {
             var combo = (ComboBox)sender;
@@ -70,7 +70,7 @@ namespace tEditor
                 set();
 
         }
-
+        //triggers error text and disables create button if all are not valid
         private void LstFocus(object sender, RoutedEventArgs e)
         {
             if (valid(fn.Text) == -1)
@@ -95,25 +95,26 @@ namespace tEditor
             else
                 error3.Text = "";
 
-            if (valid(pn2.Text)==0 && valid(pn1.Text)==0 && valid(fn.Text)==0)
+            if (valid(pn2.Text) == 0 && valid(pn1.Text) == 0 && valid(fn.Text) == 0)
             {
                 create.IsEnabled = true;
 
             }
             else
-	        {
+            {
                 create.IsEnabled = false;
-            
+
             }
-            
+
         }
+        //function param and name validator
         private int valid(string text)
         {
             if (text.Length == 0)
                 return -1;
-            if (!(text.All(x => char.IsLetterOrDigit(x) || x=='_')))
+            if (!(text.All(x => char.IsLetterOrDigit(x) || x == '_')))
             {
-                
+
                 return -1;
             }
             else if (Char.IsDigit(text.ElementAt(0)))
@@ -123,11 +124,12 @@ namespace tEditor
             }
             else
             {
-                
+
                 return 0;
             }
-           
+
         }
+        //set themes called from mainwindow
         public void setTheme(string theme)
         {
 

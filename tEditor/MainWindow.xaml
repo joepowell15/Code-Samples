@@ -84,7 +84,11 @@
                         <MenuItem Command="Paste"  Foreground="Black"/>
                         <MenuItem Command="SelectAll"  Foreground="Black"/>
                     </MenuItem>
-                </Menu>
+                <MenuItem Header="Window" Foreground="White" Name="window" FontSize="17">
+                    <MenuItem x:Name="helpToggle"   Header="Toggle Help" Foreground="Black" Click="helpToggle_Click" />
+                    
+                </MenuItem>
+            </Menu>
                 <ToolBarTray x:Name="Tray" Height="50" Margin="0,0,0.333,0" Background="#FF2D2D30">
                     <ToolBar x:Name="Tlbar" Background="#FF2D2D30" Height="50" Margin="0,7,0,-7" >
                         <Button x:Name="NewFile" ToolTip="Create new File" Click="newFile_Click" >
@@ -107,8 +111,9 @@
         
 
         <TabControl Name="tabControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,4.667,0.333,0">
-            <TabItem x:Name="tab1">
-                <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++" FontSize="14pt" Background="#FF2D2D30" TextChanged="editor_TextChanged" />
+            <TabItem x:Name="tab1" Header="Default.cpp">
+                <avalon:TextEditor Name="editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True" SyntaxHighlighting="C++" FontSize="14pt" Background="#FF2D2D30" TextChanged="editor_TextChanged"/>
+                
 
             </TabItem>
             
@@ -120,7 +125,7 @@
             <TextBlock Name="sText" />
         </StatusBar>
         <ScrollViewer Grid.Column="3" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
-        <StackPanel Grid.Column="3" Grid.RowSpan="2" >
+        <StackPanel Grid.Column="3" Grid.RowSpan="2" x:Name="help" >
 
             <Label Content="Help" HorizontalAlignment="Left" FontSize="36" FontWeight="Bold"/>
             <Label Content="Variables" FontSize="20"/>

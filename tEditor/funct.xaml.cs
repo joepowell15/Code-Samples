@@ -156,5 +156,10 @@ namespace tEditor
                 Grid.Background = Brushes.White;
             }
         }
+
+        private void create_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.addFunc(func.Text);
+        }
     }
 }

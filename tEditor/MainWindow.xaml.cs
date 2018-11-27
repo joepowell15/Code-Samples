@@ -25,7 +25,7 @@ namespace tEditor
     }
     public static class MyStaticValues
     {
-        public static string myStaticFile { get; set; }
+        public static string myStaticFile { get; set; } = "Default.cpp";
     }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -294,6 +294,19 @@ namespace tEditor
             exp9.Visibility = Visibility.Visible;
             exp10.Visibility = Visibility.Visible;
         }
+        public void addFunc(string text)
+        {
+            editor.Text += '\n';
+            editor.Text += text;
+            string paren= "nl{" +
+                "nl nl" +
+                "}";
+           
+            paren = paren.Replace("nl", "\n");
+            paren = paren.Replace("tb", "\t");
+            editor.Text += paren;
+
+        }
         //changes status bar when main text box is changed
         private void editor_TextChanged(object sender, EventArgs e)
         {
@@ -313,6 +326,23 @@ namespace tEditor
             newWin.ShowDialog();
 
             newWin.setTheme(Theme.curTheme);
+        }
+
+        private void helpToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if(help.IsVisible)
+            {
+                Grid.ColumnDefinitions[2].Width = new GridLength(0);
+                help.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Grid.ColumnDefinitions[2].Width = new GridLength(300);
+                
+                help.Visibility = Visibility.Visible;
+            }
+           
+            
         }
     }
 }

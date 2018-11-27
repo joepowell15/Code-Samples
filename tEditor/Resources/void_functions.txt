@@ -1,0 +1,32 @@
+Declaration:
+
+void [function name]([parameters]){
+	[operations]
+}
+
+Example:
+
+void function(int a, float b, char c){
+	b = b + a;
+	printf("%f\n", b);
+	printf("%c\n", c);
+	return;
+}
+
+Void functions perform actions that don't require any return value.
+They're used often for displaying information that doesn't need to be stored.
+When calling the function, values are passed in as parameters.
+These parameters are treated like variables only within that specific execution of the function.
+Any variables declared inside the function are only active for that instance of the function.
+
+Calling (example function above):
+
+function(5, 3.14, 'a');
+
+Output:
+
+8.14
+a
+
+For more information on void functions, visit
+http://www.cplusplus.com/doc/tutorial/functions/

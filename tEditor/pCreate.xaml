@@ -36,7 +36,7 @@
         </Grid.ColumnDefinitions>
         <!--text box creation-->
         <Label Grid.Column="1" HorizontalAlignment="Left" Margin="12.2,190.2,0,0" Grid.Row="1" Content="Project Folder Name" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="15"/>
-        <Label Grid.Column="1" HorizontalAlignment="Left" Margin="12.2,159.2,0,0" Grid.Row="1"  Content="Application Name" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
+        <Label Grid.Column="1" HorizontalAlignment="Left" Margin="12.2,159.2,0,0" Grid.Row="1"  Content="File Name" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
         <Label Grid.Column="1" HorizontalAlignment="Left" Margin="12.2,127.2,0,0" Grid.Row="1"  Content="Language Choice" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="16"/>
         <TextBox x:Name="slnName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="166.2,190.2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="slnName_TextChanged"/>
         <TextBox x:Name="appName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="166.2,159.2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="appName_TextChanged"/>

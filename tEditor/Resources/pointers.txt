@@ -1,0 +1,27 @@
+Pointers are different from variables.
+Instead of representing a value, they represent the contents of a certain address.
+
+Example:
+
+int i;
+int * pointer;
+pointer = &i;
+*pointer = 10;
+
+The variable 'i' now holds a value of 10.
+But let's continue the example.
+
+int x;
+pointer = &x;
+*pointer = 20;
+
+The variable 'x' now holds a value of 20.
+Notice how the same pointer could be used to change both variable values.
+The '&' stands for "address of".
+The '*' stands for "value pointed to by".
+Understanding the meaning and structure of these is important.
+
+This can be used for parsing and/or dynamic memory allocation later.
+
+For more information on pointers, visit
+http://www.cplusplus.com/doc/tutorial/pointers/

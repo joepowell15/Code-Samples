@@ -1,0 +1,55 @@
+Declaration:
+
+1-D
+[type] [variable name][(size)];
+
+2-D
+[type] [variable name][(size)][(size)];
+
+Example:
+
+int array[10][10];
+
+Arrays are made to store several values of a certain type together.
+The example above is a 2-D array.
+
+It would looks something like this:
+
+   0 1 2 3 4 5 6 7 8 9
+0  x x x x x x x x x x
+1  x x x x x x x x x x
+2  x x x x x x x x x x
+3  x x x x x x x x x x
+4  x x x x x x x x x x
+5  x x x x x x x x x x
+6  x x x x x x x x x x
+7  x x x x x x x x x x
+8  x x x x x x x x x x
+9  x x x x x x x x x x
+
+Notice the counter starts at 0 instead of one and goes to 9 instead of 10.
+To set a value in the slot 0,0 of a 2-D array, you'd use the following syntax:
+
+[array name][0][0] = [integer value].
+
+Example (using the example array from earlier):
+
+array[0][0] = 5;
+
+   0 1 2 3 4 5 6 7 8 9
+0  5 x x x x x x x x x
+1  x x x x x x x x x x
+2  x x x x x x x x x x
+3  x x x x x x x x x x
+4  x x x x x x x x x x
+5  x x x x x x x x x x
+6  x x x x x x x x x x
+7  x x x x x x x x x x
+8  x x x x x x x x x x
+9  x x x x x x x x x x
+
+Arrays can only hold values of the same type.
+One array cannot hold both integers and characters.
+
+For more information on arrays, visit
+http://www.cplusplus.com/doc/tutorial/arrays/

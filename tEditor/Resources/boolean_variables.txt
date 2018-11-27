@@ -1,0 +1,19 @@
+Declaration:
+
+bool [variable name];
+
+A 'bool' variable holds a true/false value.
+It allocates the necessary memory upon declaration.
+At the end of the program, the memory is freed automatically.
+The variable name can be used to represent the value stored in it.
+For example, take
+
+bool b = true;
+
+The name 'b' can now be used in place of true.
+The value can be changed via the following syntax:
+
+[variable name] = [true/false];
+
+For more information on boolean variables, visit
+http://www.cplusplus.com/doc/tutorial/variables/

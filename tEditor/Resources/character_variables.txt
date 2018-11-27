@@ -1,0 +1,21 @@
+Declaration:
+
+char [variable name];
+
+A 'char' variable holds a character value.
+It allocates the necessary memory upon declaration.
+At the end of the program, the memory is freed automatically.
+The variable name can be used to represent the value stored in it.
+For example, take
+
+char c = 'a';
+
+The value of 'c' is now the letter "a".
+The value can be changed via the following syntax:
+
+[variable name] = [character value];
+
+All value assignments should be contained in single quotes (' ').
+
+For more information on character variables, visit
+http://www.cplusplus.com/doc/tutorial/variables/

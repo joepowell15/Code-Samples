@@ -1,0 +1,20 @@
+When you declare a variable, it automatically reserves memory for the given type.
+Using pointers, we can dynamically allocate memory.
+This means memory can be reserved dependent on various factors.
+Using dynamic memory allocation, memory can be managed more efficiently.
+
+Let's take a step back to pointers first:
+
+int * pointer;
+pointer = new int;
+
+This allocates the space for a new integer element and assigns the pointer to it.
+It can also be done as an array:
+
+pointer = new int[5];
+
+This allocates memory for five integer elements.
+The pointer is returned to the first element of the sequence.
+
+For more information on dynamic memory allocation, visit
+http://www.cplusplus.com/doc/tutorial/dynamic/

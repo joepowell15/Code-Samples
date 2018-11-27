@@ -84,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="funct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="funct.xaml.cs">
+      <DependentUpon>funct.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -173,9 +180,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\file_button_big.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
@@ -188,13 +192,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\butler_icon_color.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\paste.png" />
@@ -225,6 +223,49 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\theme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NewBig.png" />
+    <Resource Include="Resources\OpenBig.png" />
+    <Resource Include="Resources\SaveBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\invtheme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrays.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boolean_variables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\character_variables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_variables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\float_variables.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\integer_variables.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recursive_functions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\returning_functions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\void_functions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memory_allocation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pointers.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

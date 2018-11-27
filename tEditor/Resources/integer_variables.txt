@@ -1,0 +1,24 @@
+Declaration:
+
+int [variable name];
+
+An 'int' variable holds an integer value.
+It allocates the necessary memory upon declaration.
+At the end of the program, the memory is freed automatically.
+The variable name can be used to represent the value stored in it.
+For example, take
+
+int x = 5;
+
+int y = 4 + x;
+
+The variable 'y' would be set equal to 9 on declaration.
+The value can be changed via the following syntax:
+
+[variable name] = [integer value];
+
+If a decimal value is assigned to an integer, it will be
+rounded down to the nearest integer.
+
+For more information on integer variables, visit
+http://www.cplusplus.com/doc/tutorial/variables/

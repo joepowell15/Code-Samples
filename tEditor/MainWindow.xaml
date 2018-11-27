@@ -75,19 +75,19 @@
                 <ToolBarTray x:Name="Tray" Height="34" Margin="0,0,0.333,0" IsLocked="True" Background="#FF2D2D30">
                     <ToolBar x:Name="Tlbar" Background="#FF686877" >
                         <Button x:Name="NewFile" ToolTip="Create new File" Click="newFile_Click" >
-                            <Image Source="/Resources/new.png" Height="21" Width="22" RenderTransformOrigin="0.509,0.5"/>
+                            <Image Source="/Resources/new.png" Height="26" Width="26" RenderTransformOrigin="0.509,0.5"/>
                         </Button>
                         <Button x:Name="OpenFile" ToolTip="Open Existing File" Margin="0,0,0,0.2" VerticalAlignment="Bottom" Click="OpenFile_Click_1">
-                            <Image Source="/Resources/open.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/open.png" Height="26" Width="26"/>
                         </Button>
                         <Button x:Name="SaveFunc" ToolTip="Saves Current File" Click="SaveFunc_Click" >
-                            <Image Source="/Resources/save.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/save.png" Height="26" Width="26"/>
                         </Button>
-                        <Button x:Name="NFuncFile" ToolTip="New Function File" >
-                            <Image Source="/Resources/function.png" Height="21" Width="22"/>
+                        <Button x:Name="NFuncFile" ToolTip="Insert New Template Function" >
+                            <Image Source="/Resources/function.png" Height="26" Width="26"/>
                         </Button>
                         <Button x:Name="ThemeChng" ToolTip="Change Theme" Click="ThemeChng_Click"  >
-                            <Image Source="/Resources/theme.png" Height="21" Width="22"/>
+                            <Image Source="/Resources/theme.png" Height="26" Width="26"/>
                         </Button>
 
                     </ToolBar>

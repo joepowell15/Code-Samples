@@ -44,10 +44,7 @@
 
                             </MenuItem.Icon>
                             <MenuItem x:Name="newProj" Header="Project" Click="newProj_Click" />
-                            <MenuItem x:Name="newFile" Header="File" Click="newFile_Click" Command="New">
-
-                            </MenuItem>
-
+                           
 
 
 
@@ -73,7 +70,7 @@
 
                         </MenuItem>
 
-                        <MenuItem x:Name="ex" Header="Exit" Command="Close" Foreground="#FF090909"/>
+                        <MenuItem x:Name="ex" Header="Exit" Foreground="#FF090909" Click="ex_Click"/>
                     </MenuItem>
                     <MenuItem Header="Edit" Foreground="White" Name="edit" FontSize="17">
                         <MenuItem Command="Paste"  Foreground="Black"/>

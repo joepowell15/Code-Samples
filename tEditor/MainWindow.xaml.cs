@@ -314,5 +314,10 @@ namespace tEditor
 
             newWin.setTheme(Theme.curTheme);
         }
+
+        private void ex_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Close();
+        }
     }
 }
